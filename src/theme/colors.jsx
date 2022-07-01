@@ -1,10 +1,5 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+export const colors = {
+ white: '#fff',
+ orange: '#fd94ff'
 
-export default function Colors() {
-  return (
-    <View>
-      <Text>Colors</Text>
-    </View>
-  )
-}
+};
