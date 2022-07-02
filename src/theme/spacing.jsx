@@ -1,10 +1,1 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-
-export default function Spacing() {
-  return (
-    <View>
-      <Text>spacing</Text>
-    </View>
-  )
-}
+export const spacing= [2, 4, 8, 16, 32] ;
