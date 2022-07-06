@@ -30,6 +30,7 @@ export default function Navigation(){
     <NavigationContainer theme = {THEME}>
         
             <Tab.Screen name= "Setting" component = {Home}  />
+            <Tab.Screen name= "Setting" component = {Details}  />
         
     </NavigationContainer>
 }
