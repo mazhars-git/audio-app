@@ -17,6 +17,7 @@ const BASE_BOLD = {
 const BOLD = {
     fontFamily: typography.bold,
     color: colors.white, 
+    fontSize: 32,
 }
 
 export const presets = {
@@ -24,7 +25,7 @@ export const presets = {
     bold: BOLD,
     h1: {
         ...BOLD,
-        fontSize: 32,
+        fontSize: 40,
     },
     h2: {
         ...BOLD,
