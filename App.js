@@ -2,6 +2,7 @@ import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from './src/theme/colors';
+import { spacing } from './src/theme/spacing';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -16,8 +17,9 @@ export default function App() {
   else{
     
     return (
-      <View style={styles.container}>
-        <Text style={{color: 'white', fontSize: '30px'}}>Welcome to My Audio app!</Text>
+      <View>
+        <Text style={{color: 'black', fontSize: '30px'}}>Welcome to My Audio app!</Text>
+        <Text style={{color: 'black', fontSize: '30px', paddingTop: spacing[8]}}>Welcome</Text>
         <StatusBar style="auto" />
       </View>
     );
