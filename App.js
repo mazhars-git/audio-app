@@ -1,6 +1,7 @@
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Navigation from './src/navigation';
 import { colors } from './src/theme/colors';
 import { spacing } from './src/theme/spacing';
 
@@ -18,9 +19,7 @@ export default function App() {
     
     return (
       <View>
-        <Text style={{color: 'black', fontSize: '30px'}}>Welcome to My Audio app!</Text>
-        <Text style={{color: 'black', fontSize: '30px', paddingTop: spacing[8]}}>Welcome</Text>
-        <StatusBar style="auto" />
+        <Navigation />        
       </View>
     );
   }

@@ -1,10 +1,14 @@
-import { NavigationContainer, DefaultTheme, Tab } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme} from "@react-navigation/native";
 import { colors } from './../theme/colors';
 import Home from './../screen/home';
 import Headphones from './../screen/headphones';
 import Details from './../screen/productDetails';
 import Earphones from './../screen/earphones';
 import Speakers from './../screen/speakers';
+import Cart from './../screen/cart';
+import Checkout from './../screen/checkout';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 
 
@@ -19,8 +23,8 @@ const THEME = {
 
 const Tab = createBottomTabNavigator();
 
-const HomeStack = createStackNavigator();
-function HomeStackScreen (){
+const HomeStack = createNativeStackNavigator();
+function HomeStackScreens (){
     return(
         <HomeStack.Navigator>
             <HomeStack.Screen name= "Home" component = {Home}  />
@@ -28,8 +32,8 @@ function HomeStackScreen (){
     )
 }
 
-const HeadphonesStack = createStackNavigator();
-function HeadphonesStackScreen (){
+const HeadphonesStack = createNativeStackNavigator();
+function HeadphonesStackScreens (){
     return(
         <HeadphonesStack.Navigator>
             <HeadphonesStack.Screen name= "Headphones" component = {Headphones} /> 
@@ -38,8 +42,8 @@ function HeadphonesStackScreen (){
     )
 }
 
-const EarphonesStack = createStackNavigator();
-function EarphonesStackScreen (){
+const EarphonesStack = createNativeStackNavigator();
+function EarphonesStackScreens (){
     return(
         <EarphonesStack.Navigator>
             <EarphonesStack.Screen name= "Earphones" component = {Earphones}  />
@@ -47,8 +51,8 @@ function EarphonesStackScreen (){
        </EarphonesStack.Navigator>
     )
 }
-const SpeakersStack = createStackNavigator();
-function SpeakersStackScreen (){
+const SpeakersStack = createNativeStackNavigator();
+function SpeakersStackScreens (){
     return(
         <SpeakersStack.Navigator>
             <SpeakersStack.Screen name= "Speakers" component = {Speakers}  />
@@ -56,14 +60,30 @@ function SpeakersStackScreen (){
        </SpeakersStack.Navigator>
     )
 }
+const CartStack = createNativeStackNavigator();
+function CartStackScreens (){
+    return(
+        <CartStack.Navigator>
+            <CartStack.Screen name= "Cart" component = {Cart}  />
+            <CartStack.Screen name= "Checkout" component = {Checkout} /> 
+       </CartStack.Navigator>
+    )
+}
 
 
 
 export default function Navigation(){
+
+    return(
     <NavigationContainer theme = {THEME}>
-         <Tab.Navigator>
-            <Tab.Screen name= "Home" component = {HomeStackScreen}  />
-            <Tab.Screen name= "Headphones" component = {HeadphonesStackScreen}  />
+        <Tab.Navigator>
+            <Tab.Screen name= "HomeTab" component = {HomeStackScreens} />
+            <Tab.Screen name= "HeadphonesTab" component = {HeadphonesStackScreens} />
+            <Tab.Screen name= "EarphonesTab" component = {EarphonesStackScreens} />
+            <Tab.Screen name= "SpeakersTab" component = {SpeakersStackScreens} />
+            <Tab.Screen name= "CartTab" component = {CartStackScreens} />
         </Tab.Navigator>
     </NavigationContainer>
+    );   
+    
 }
